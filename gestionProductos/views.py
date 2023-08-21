@@ -20,11 +20,11 @@ def edicionProducto(request, id_producto):
 
 
 def editarProducto(request):
-    id_producto = request.POST["id_producto"]
-    nombre_producto = request.POST["nombre_producto"]
-    descripcion = request.POST["descripcion"]
-    precio = request.POST["precio"]
-    cantidad_stock = request.POST["cantidad_stock"]
+    id_producto = request.POST['id_producto']
+    nombre_producto = request.POST['nombre_producto']
+    descripcion = request.POST['descripcion']
+    precio = request.POST['precio']
+    cantidad_stock = request.POST['cantidad_stock']
 
     producto = Producto.objects.get(id_producto=id_producto)
 
@@ -40,14 +40,14 @@ def eliminarProducto(request, id_producto):
     producto.delete()
     return redirect('/')
 
-def eliminarProveedor(request, id_proveedor):
-    proveedor = Proveedor.objects.get(id_proveedor=id_proveedor)
-    proveedor.delete()
-    return redirect('/')
-
 def eliminarCategoría(request, id_categoria):
     categoria = Categoria.objects.get(id_categoria=id_categoria)
     categoria.delete()
+    return redirect('/')
+
+def eliminarProveedor(request, id_proveedor):
+    proveedor = Proveedor.objects.get(id_proveedor=id_proveedor)
+    proveedor.delete()
     return redirect('/')
 
 def eliminarCliente(request, rut_cliente):

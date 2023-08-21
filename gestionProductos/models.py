@@ -1,5 +1,6 @@
 from django.db import models
 
+#! No se debió crear id especial (como id_categoria), solo debió ser "id"
 
 class Categoria(models.Model):
     id_categoria = models.IntegerField(primary_key=True)
